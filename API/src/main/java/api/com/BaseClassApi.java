@@ -260,7 +260,7 @@ public class BaseClassApi
 		 
 	     @GET
 		 @Path("FAQs")
-		 @Produces(MediaType.APPLICATION_JSON)
+		 @Produces("application/vnd.speco-v1+json")
 		 public CheckFAQs getFAQsResponse() 
 	     {
 	    	CheckFAQs faqs=new CheckFAQs();
@@ -290,6 +290,41 @@ public class BaseClassApi
 			return faqs;
 				
 		 }
+	     
+	     @GET
+		 @Path("FAQs")
+		 @Produces("application/vnd.speco-v2+json")
+		 public CheckFAQs1 getFAQsResponse1() 
+	     {
+	    	CheckFAQs1 faqs=new CheckFAQs1();
+	    	List<FAQs1> faq=new ArrayList<FAQs1>();
+	    	
+	    	FAQs1 obj=null;
+	    	obj=new FAQs1();
+	    	obj.setTopic("Topic 01");
+	    	obj.setQuestion("What does speco do");
+	    	obj.setAnswer("hey");
+	    	obj.setWhy("yaa");
+	    	
+	    	FAQs1 obj1=null;
+	    	obj1=new FAQs1();
+	    	
+	    	obj1.setTopic("Topic 02");
+	    	obj1.setQuestion("How does online consultation work");
+	    	obj1.setAnswer("speco");
+	    	
+	    	faq.add(obj);
+	    	faq.add(obj1);
+	    	
+	    	faqs.setMessage("Success");
+	    	faqs.setStatus("200");
+	    	faqs.setData(faq);
+	    	
+	    	
+			return faqs;
+				
+		 }
+	     
 	     	@POST
 			@Path("enquiry")
 		    @Consumes(MediaType.APPLICATION_JSON)

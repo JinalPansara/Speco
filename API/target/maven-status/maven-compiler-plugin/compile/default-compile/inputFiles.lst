@@ -1,47 +1,49 @@
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckFAQs.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Enquiry.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\InvoiceGenerated.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\BaseClassApi.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CancelledAppointment.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Onboarding.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckAppointment.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Report.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\EMRGenerated.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Prescription.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Appointment.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Visit.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\PaymentPlansFeatures.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckPatient.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\SubSymptoms.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\ClosedAppointment.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\SubSymptom.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckSubSymptoms.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckVisit.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Patient.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckSymptom.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Diagnosis.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\EducationDetail.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\EMR.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Findings.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\DataService.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\FAQs.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckOnboarding.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckEMR.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckEnquiry.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Paymentplans.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckClinic.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\ClinicId.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Clinic.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckPayment.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckDoctors.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\FollowUps.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckCancelledAppointment.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckClosedAppointment.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\resource\PingResource.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Symptom.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\PatientUploadData.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\CheckPaymentplans.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Doctors.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Payment.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\Package.java
-C:\Users\Admin\Documents\Speco\API\src\main\java\api\com\StreamLambdaHandler.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckFAQs.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CancelledAppointment.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckPayment.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\SubSymptoms.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\SubSymptom.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Package.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Payment.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\PaymentPlansFeatures.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Diagnosis.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckClinic.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckOnboarding.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\StreamLambdaHandler.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckPatient.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckPaymentplans.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\EMR.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckEnquiry.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\EMRGenerated.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Findings.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\InvoiceGenerated.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\resource\PingResource.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\FAQs1.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\PatientUploadData.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckSymptom.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\FAQs.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\EducationDetail.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckEMR.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\BaseClassApi.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Appointment.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Prescription.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckClosedAppointment.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Visit.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckCancelledAppointment.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckSubSymptoms.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\ClinicId.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Symptom.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Report.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckDoctors.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Enquiry.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Onboarding.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckAppointment.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Patient.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Doctors.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckVisit.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Clinic.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\CheckFAQs1.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\Paymentplans.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\ClosedAppointment.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\DataService.java
+C:\Users\Admin\OneDrive - infintrixglobal.com\Desktop\Speco project\SpecoApi\API\src\main\java\api\com\FollowUps.java

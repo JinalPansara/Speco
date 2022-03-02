@@ -9,7 +9,8 @@ public class FAQs
 	@JsonProperty("Question")
 	private String question;
 	@JsonProperty("Answer")
-	private String answer;
+	public String answer;
+	
 	public String getQuestion() {
 		return question;
 	}
