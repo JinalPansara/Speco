@@ -19,7 +19,7 @@ import javax.ws.rs.core.Response;
 
 
 
-  @Path("/")
+ @Path("/")
 public class BaseClassApi 
 {
 	private DataService dataService = DataService.getInstance();
