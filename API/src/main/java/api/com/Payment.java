@@ -1,5 +1,7 @@
 package api.com;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Payment 
@@ -15,13 +17,7 @@ public class Payment
 	@JsonProperty("Charges")
 	private String charges;
 	@JsonProperty("Detail")
-	private String detail;
-	@JsonProperty("Quantity")
-	private String quantity;
-	@JsonProperty("UnitCost")
-	private String unitcost;
-	@JsonProperty("Discount")
-	private String discount;
+	private List<DetailOfCharges> details;
 	@JsonProperty("Total")
 	private String total;
 	public String getPatientid() {
@@ -48,35 +44,12 @@ public class Payment
 	public void setTime(String time) {
 		this.time = time;
 	}
-	public String getDetail() {
-		return detail;
-	}
-	public void setDetail(String detail) {
-		this.detail = detail;
-	}
+	
 	public String getCharges() {
 		return charges;
 	}
 	public void setCharges(String charges) {
 		this.charges = charges;
-	}
-	public String getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
-	}
-	public String getUnitcost() {
-		return unitcost;
-	}
-	public void setUnitcost(String unitcost) {
-		this.unitcost = unitcost;
-	}
-	public String getDiscount() {
-		return discount;
-	}
-	public void setDiscount(String discount) {
-		this.discount = discount;
 	}
 	public String getTotal() {
 		return total;
@@ -84,6 +57,14 @@ public class Payment
 	public void setTotal(String total) {
 		this.total = total;
 	}
+	public List<DetailOfCharges> getDetails() {
+		return details;
+	}
+	public void setDetails(List<DetailOfCharges> details) {
+		this.details = details;
+	}
+	
+	
 	
 	
 }

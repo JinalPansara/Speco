@@ -424,6 +424,14 @@ public class BaseClassApi
 		     {
 		    	CheckPayment payments=new CheckPayment();
 		    	List<Payment> payment=new ArrayList<Payment>();
+		    	List<DetailOfCharges> detail=new ArrayList<DetailOfCharges>();
+		    	DetailOfCharges charges=new DetailOfCharges();
+		    	charges.setDetail("Visiting charges");
+		    	charges.setUnitcost("600");
+		    	charges.setQuantity("1");
+		    	charges.setDiscount("100");
+		    	charges.setCharges("1600");
+		    	detail.add(charges);
 		    	
 		    	Payment obj=null;
 		    	obj=new Payment();
@@ -432,26 +440,11 @@ public class BaseClassApi
 		    	obj.setDate("12 oct 2021");
 		    	obj.setTime("11:00 am to 12:00 pm");
 		    	obj.setCharges("3890 rs");
-		    	obj.setDetail("visiting charge");
-		    	obj.setQuantity("0");
-		    	obj.setUnitcost("0");
-		    	obj.setDiscount("0");
-		    	obj.setTotal("2000");
+		    	obj.setDetails(detail);
 		    	
-		    	Payment obj1=null;
-		    	obj1=new Payment();
-		    	obj1.setPatientid("52562");
-		    	obj1.setPatientname("Hetasvi Bhatt");
-		    	obj1.setDate("12 oct 2021");
-		    	obj1.setTime("11:00 am to 12:00 pm");
-		    	obj1.setCharges("3890 rs");
-		    	obj1.setQuantity("0");
-		    	obj1.setUnitcost("0");
-		    	obj1.setDiscount("0");
-		    	obj1.setTotal("Paid");
+		    	
 		    	
 		    	payment.add(obj);
-		    	payment.add(obj1);
 		    	
 		    	payments.setMessage("Success");
 		    	payments.setStatus("200");
