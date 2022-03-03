@@ -46,4 +46,5 @@ api\com\StreamLambdaHandler.class
 api\com\CancelledAppointment.class
 api\com\CheckVisit.class
 api\com\Doctors.class
+api\com\DetailOfCharges.class
 api\com\Visit.class
