@@ -88,6 +88,8 @@ public class DataService
 			 doctors1.setClinicid(clinicid);
 			 doctors1.setConsultationcharge(0);
 			 doctors1.setSpecialityid(0);
+			 doctors1.setOverview("Doctor is a practising general physician.Vyas is an esteemed member of indian society"
+			 		+ "of gastroenterology");
 			 
 			 
 			 doctor.add(doctors1);
@@ -589,5 +591,6 @@ public class DataService
 			 return insert; 
 		 }
 		 
+		
      
 }

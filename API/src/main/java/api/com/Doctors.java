@@ -2,6 +2,7 @@ package api.com;
 
 import java.util.List;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Doctors 
@@ -78,6 +79,8 @@ public class Doctors
 	private int consultationcharge;
 	@JsonProperty("SpecialityId")
 	private int specialityid;
+	@JsonProperty("OverView")
+	private String overview;
 	
 	
 	public Doctors()
@@ -386,6 +389,18 @@ public class Doctors
 
 	public void setEducationdetails(List<EducationDetail> educationdetails) {
 		this.educationdetails = educationdetails;
+	}
+
+
+
+	public String getOverview() {
+		return overview;
+	}
+
+
+
+	public void setOverview(String overview) {
+		this.overview = overview;
 	}
 	
 

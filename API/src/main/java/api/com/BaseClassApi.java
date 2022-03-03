@@ -683,5 +683,72 @@ public class BaseClassApi
 		 	{
 		    	return Response.status(200).entity(dataService.getsubsymptoms()).build();
 		 	}
+	     	
+	     	@GET
+	     	@Path("dashboard")
+	     	@Produces(MediaType.APPLICATION_JSON)
+	     	public CheckDashboard getdashboardresponse()
+	     	{
+	     		CheckDashboard dashboarddetails=new CheckDashboard();
+	     		try {
+	     			List<Dashboard> dashboard=new ArrayList<Dashboard>(); 
+	     		    Dashboard details=null;
+	     		    details=new Dashboard();
+	     		    details.setPatientid("1");
+	     		    details.setCondition("critical");
+	     		    details.setSeverity("high");
+	     		    details.setPatientname("raj");
+	     		    details.setDoctor("raj vyas");
+	     		    details.setCondition("offline");
+	     		    details.setDate("12/03/2022");
+	     		    details.setCharges("rs2000/-");
+	     		    details.setStatus("pending");
+	     		    dashboard.add(details);
+	     		    dashboarddetails.setData(dashboard);
+	     		    dashboarddetails.setMessage("Success");
+	     		    dashboarddetails.setStatus("200");
+	     			return dashboarddetails;
+	     		}
+	     		catch(Exception e)
+	     		{
+	     		dashboarddetails.setMessage(e.getMessage());
+	     		dashboarddetails.setData(null);
+	     		dashboarddetails.setStatus("400");
+	     		}
+				return dashboarddetails;
 	     
+	     	    }
+	     	
+	     	@GET
+	     	@Path("consultationaddressbook")
+	     	@Produces(MediaType.APPLICATION_JSON)
+	     	public CheckConsultationAddressBook getConsultationaddressbookresponse()
+	     	{
+	     		CheckConsultationAddressBook addressbookdetails=new CheckConsultationAddressBook();
+	     		try {
+	     			List<ConsultationAddressBook> addressbook=new ArrayList<ConsultationAddressBook>(); 
+	     		    ConsultationAddressBook consultationaddressdetails=null;
+	     		    consultationaddressdetails=new ConsultationAddressBook();
+	     		    consultationaddressdetails.setPatientid("1");
+	     		    consultationaddressdetails.setPatientname("raj");
+	     		    consultationaddressdetails.setSex("male");
+	     		    consultationaddressdetails.setAge("32");
+	     		    consultationaddressdetails.setLastvisit("12oct 2021 11:11 am");
+	     		    consultationaddressdetails.setContactnumber("+917738567654");
+	     		    consultationaddressdetails.setConsultationfees("rs 500");
+	     		    addressbook.add(consultationaddressdetails);
+	     		    addressbookdetails.setData(addressbook);
+	     		    addressbookdetails.setMessage("Success");
+	     		    addressbookdetails.setStatus("200");
+	     			return addressbookdetails;
+	     		}
+	     		catch(Exception e)
+	     		{
+	     		addressbookdetails.setMessage(e.getMessage());
+	     		addressbookdetails.setData(null);
+	     		addressbookdetails.setStatus("400");
+	     		}
+				return addressbookdetails;
+	     
+	     	    }
 }
