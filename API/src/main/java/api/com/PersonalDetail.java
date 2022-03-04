@@ -1,9 +1,14 @@
 package api.com;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class PersonalDetail 
 {
+	@JsonProperty("PersonalHistory")
 	private String personalhistory;
+	@JsonProperty("FamilyHistory")
 	private String familyhistory;
+	@JsonProperty("SocioEconomicStatus")
 	private String socioeconomicstatus;
 	public String getPersonalhistory() {
 		return personalhistory;
