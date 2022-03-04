@@ -18,6 +18,7 @@ api\com\BaseClassApi.class
 api\com\CheckEnquiry.class
 api\com\PatientUploadData.class
 api\com\CheckClosedAppointment.class
+api\com\CheckConsultationAddressBook.class
 api\com\CheckPatient.class
 api\com\Report.class
 api\com\Onboarding.class
@@ -37,14 +38,17 @@ api\com\SubSymptom.class
 api\com\FAQs1.class
 api\com\Clinic.class
 api\com\Package.class
+api\com\ConsultationAddressBook.class
 api\com\ClosedAppointment.class
 api\com\PaymentPlansFeatures.class
 api\com\CheckOnboarding.class
 api\com\EducationDetail.class
 api\com\Payment.class
+api\com\CheckDashboard.class
 api\com\StreamLambdaHandler.class
 api\com\CancelledAppointment.class
 api\com\CheckVisit.class
 api\com\Doctors.class
 api\com\DetailOfCharges.class
+api\com\Dashboard.class
 api\com\Visit.class

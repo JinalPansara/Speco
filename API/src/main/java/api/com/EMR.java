@@ -33,6 +33,10 @@ public class EMR
 	private String concern;
 	@JsonProperty("InvoiceGenerated")
 	private List<InvoiceGenerated> invoicegenerated;
+	@JsonProperty("PatientUploadData")
+	private List<PatientUploadData> patientuploadata;
+	@JsonProperty("WearableData")
+	private List<WearableData> wearabledata;
 	public String getPatientname() {
 		return patientname;
 	}
@@ -110,5 +114,17 @@ public class EMR
 	}
 	public void setConcern(String concern) {
 		this.concern = concern;
+	}
+	public List<PatientUploadData> getPatientuploadata() {
+		return patientuploadata;
+	}
+	public void setPatientuploadata(List<PatientUploadData> patientuploadata) {
+		this.patientuploadata = patientuploadata;
+	}
+	public List<WearableData> getWearabledata() {
+		return wearabledata;
+	}
+	public void setWearabledata(List<WearableData> wearabledata) {
+		this.wearabledata = wearabledata;
 	}
 }

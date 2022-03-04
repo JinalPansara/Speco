@@ -470,6 +470,8 @@ public class BaseClassApi
 		    	List<Prescription> prescription=new ArrayList<Prescription>();
 		    	List<EMRGenerated> emrgenerated=new ArrayList<EMRGenerated>();
 		    	List<InvoiceGenerated> invoicegenerated=new ArrayList<InvoiceGenerated>();
+		    	List<WearableData> wearabledata=new ArrayList<WearableData>();
+		    	List<PatientUploadData> patientuploaddata=new ArrayList<PatientUploadData>();
 		    	
 		    	Symptom symptom1=new Symptom();
 		    	symptom1.setSymptomname("Cough from 3 days,severe");
@@ -536,6 +538,19 @@ public class BaseClassApi
 		    	invoicegenerated1.setDate("12 oct 2021");
 		    	invoicegenerated.add(invoicegenerated1);
 		    	
+		    	WearableData wearabledata1=new WearableData();
+		    	wearabledata1.setWearabledata("img1.jpg");
+		    	wearabledata1.setAppointmentdate("12/02/2021");
+		    	wearabledata1.setConsultedto("Dr Abc");
+		    	wearabledata1.setConcern("abc");
+		    	wearabledata.add(wearabledata1);
+		    	
+		    	PatientUploadData patientuploaddata1=new PatientUploadData();
+		    	patientuploaddata1.setFileuploaded("img1.jpg");
+		    	patientuploaddata1.setAppointmentdate("12/02/2021");
+		    	patientuploaddata1.setConcern("abc");
+		    	patientuploaddata1.setConsultedto("Dr xyz");
+		    
 		    	
 		    	EMR obj=null;
 		    	obj=new EMR();
@@ -552,6 +567,8 @@ public class BaseClassApi
 		    	obj.setEmrgenerated(emrgenerated);
 		    	obj.setInvoicegenerated(invoicegenerated);
 		    	obj.setConcern("severe");
+		    	obj.setWearabledata(wearabledata);
+		    	obj.setPatientuploadata(patientuploaddata);
 		    	
 		    	EMR obj1=null;
 		    	obj1=new EMR();
@@ -568,7 +585,8 @@ public class BaseClassApi
 		    	obj1.setEmrgenerated(emrgenerated);
 		    	obj1.setInvoicegenerated(invoicegenerated);
 		    	obj1.setConcern("severe");
-		    	
+		    	obj1.setWearabledata(wearabledata);
+		    	obj1.setPatientuploadata(patientuploaddata);
 		    	emr.add(obj);
 		    	emr.add(obj1);
 		    	

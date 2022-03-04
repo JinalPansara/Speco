@@ -1,9 +1,14 @@
 package api.com;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class InvoiceGenerated 
 {
+	@JsonProperty("Invoice")
 	private String invoice;
+	@JsonProperty("GeneratedBy")
 	private String generatedby;
+	@JsonProperty("Date")
 	private String date;
 	public String getInvoice() {
 		return invoice;
