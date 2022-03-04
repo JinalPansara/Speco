@@ -5,6 +5,7 @@ package api.com;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.print.attribute.standard.MediaSize.Other;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -41,7 +42,7 @@ public class BaseClassApi
      }
      
 	 @GET
-	 @Path("Doctor/{DoctorId}")
+	 @Path("Doctor/{doctorid}")
 	 @Produces(MediaType.APPLICATION_JSON)
 	 public Response getdoctor(@PathParam("doctorid") int id) {
 	        CheckDoctors doctor = dataService.getdoctorbyid(id);
@@ -57,7 +58,7 @@ public class BaseClassApi
 	    }
 	 
 	 @PUT
-     @Path("Doctor/{Doctorid}")
+     @Path("Doctor/{doctorid}")
      @Produces(MediaType.APPLICATION_JSON)
      @Consumes(MediaType.APPLICATION_JSON)
      public Response UpdateDoctorById(@PathParam("doctorid")int id,Doctors doc) {
@@ -71,11 +72,11 @@ public class BaseClassApi
      }
 	 
 	 @DELETE
-     @Path("Doctor/{Doctorid}")
+     @Path("Doctor/{doctorid}")
      @Produces(MediaType.APPLICATION_JSON)
      @Consumes(MediaType.APPLICATION_JSON)
      public Response getdetail(@PathParam("doctorid") int id) {
-         CheckDoctors del = dataService.getdoctorbyid(id);
+         CheckDoctors del = dataService.GetDeleteDoctors(id);
          if (del == null) {
              return Response.status(Response.Status.NOT_FOUND).entity(dataService.getdoctorbyid(id))
                        .build();
@@ -161,7 +162,7 @@ public class BaseClassApi
 	     }
 	     
 	     @GET
-		 @Path("Clinic/{Clinicid}")
+		 @Path("Clinic/{clinicid}")
 		 @Produces(MediaType.APPLICATION_JSON)
 		 public Response getclinicbyid(@PathParam("clinicid") int id) {
 		        CheckClinic clinic = dataService.getClinicById(id);
@@ -176,7 +177,7 @@ public class BaseClassApi
 		    }
 	     
 	     @PUT
-	     @Path("Clinic/{Clinicid}")
+	     @Path("Clinic/{clinicid}")
 	     @Produces(MediaType.APPLICATION_JSON)
 	     @Consumes(MediaType.APPLICATION_JSON)
 	     public Response getCustomer(@PathParam("clinicid") int id,Clinic cs) {
@@ -192,7 +193,7 @@ public class BaseClassApi
 	     }
 	     
 	     @DELETE
-	     @Path("Clinic/{Clinicid}")
+	     @Path("Clinic/{clinicid}")
 	     @Produces(MediaType.APPLICATION_JSON)
 	     @Consumes(MediaType.APPLICATION_JSON)
 	     public Response getdetails(@PathParam("clinicid")int id) {
@@ -361,13 +362,13 @@ public class BaseClassApi
 	     	 
 	     	 
 	     	 @PUT
-		     @Path("ClosedAppointment/PatientId}")
+		     @Path("ClosedAppointment/{patientid}")
 		     @Produces(MediaType.APPLICATION_JSON)
 		     @Consumes(MediaType.APPLICATION_JSON)
 		     public Response UpdateClosedAppointment(@PathParam("patientid") int id,ClosedAppointment ca) {
 		         CheckClosedAppointment cca = dataService.GetClosedAppointmentById(id);
 		         if (cca == null) {
-		             return Response.status(Response.Status.NOT_FOUND).entity(dataService.getClinicById(id))
+		             return Response.status(Response.Status.NOT_FOUND).entity(dataService.GetClosedAppointmentById(id))
 		                       .build();
 		         } else {
 		        	 return Response.ok()
@@ -385,7 +386,7 @@ public class BaseClassApi
 			 }
 	     	 
 	     	 @PUT
-		     @Path("CancelledAppointment/{PatientId}")
+		     @Path("CancelledAppointment/{patientid}")
 		     @Produces(MediaType.APPLICATION_JSON)
 		     @Consumes(MediaType.APPLICATION_JSON)
 		     public Response UpdateCancelledAppointment(@PathParam("patientid") String id,CancelledAppointment ca) {
@@ -456,12 +457,12 @@ public class BaseClassApi
 			 }
 	     	 
 	     	 @GET
-			 @Path("EMR")
+			 @Path("Consultation")
 			 @Produces(MediaType.APPLICATION_JSON)
-			 public CheckEMR GetEMRResponse() 
+			 public CheckConsultation GetConsultationResponse() 
 		     {
-		    	CheckEMR emrs=new CheckEMR();
-		    	List<EMR> emr=new ArrayList<EMR>();
+		    	CheckConsultation emrs=new CheckConsultation();
+		    	List<Consultation> emr=new ArrayList<Consultation>();
 		    	
 		    	List<Symptom> symptoms=new ArrayList<Symptom>();
 		    	List<Findings> findings=new ArrayList<Findings>();
@@ -472,6 +473,11 @@ public class BaseClassApi
 		    	List<InvoiceGenerated> invoicegenerated=new ArrayList<InvoiceGenerated>();
 		    	List<WearableData> wearabledata=new ArrayList<WearableData>();
 		    	List<PatientUploadData> patientuploaddata=new ArrayList<PatientUploadData>();
+		    	List<PersonalDetail> personaldetail=new ArrayList<PersonalDetail>();
+		    	List<PatientIllnessSummary> patientillnesssumary=new ArrayList<PatientIllnessSummary>();
+		    	List<Examination> examination=new ArrayList<Examination>();
+		    	List<Others> other=new ArrayList<Others>();
+		    	List<Visit> visits=new ArrayList<Visit>();
 		    	
 		    	Symptom symptom1=new Symptom();
 		    	symptom1.setSymptomname("Cough from 3 days,severe");
@@ -550,10 +556,41 @@ public class BaseClassApi
 		    	patientuploaddata1.setAppointmentdate("12/02/2021");
 		    	patientuploaddata1.setConcern("abc");
 		    	patientuploaddata1.setConsultedto("Dr xyz");
+		    	patientuploaddata.add(patientuploaddata1);
+		    	
+		    	PersonalDetail personaldetail1=new PersonalDetail();
+		    	personaldetail1.setPersonalhistory("abcd");
+		    	personaldetail1.setFamilyhistory("xyzj");
+		    	personaldetail1.setSocioeconomicstatus("abcd");
+		    	personaldetail.add(personaldetail1);
+		    	
+		    	PatientIllnessSummary patientillnesssummary1=new PatientIllnessSummary();
+		    	patientillnesssummary1.setChiefcomplaint("dujhqk");
+		    	patientillnesssummary1.setHistoryofpresentillness("asjs");
+		    	patientillnesssummary1.setHistoryofpastillness("dccukhw");
+		    	patientillnesssumary.add(patientillnesssummary1);
+		    	
+		    	Examination examination1=new Examination();
+		    	examination1.setGeneralphysicalexamination("aduwas");
+		    	examination1.setLocalexamination("sdhcukqka");
+		    	examination1.setSystematicexamination("guqyasui");
+		    	examination.add(examination1);
+		    	
+		    	Others other1=new Others();
+		    	other1.setInvoices("img1.jpg");
+		    	other1.setMedications("asudukj");
+		    	other.add(other1);
+		    	
+		    	Visit visit1=new Visit();
+		    	visit1.setVisit("01");
+		    	visit1.setDate("12/02/201");
+		    	visit1.setTime("12:00 pm to 1:00 pm");
+		    	visits.add(visit1);
+		    	
 		    
 		    	
-		    	EMR obj=null;
-		    	obj=new EMR();
+		    	Consultation obj=null;
+		    	obj=new Consultation();
 		    	obj.setPatientname("Hetasvi Bhatt");
 		    	obj.setConsultedto("Dr viral vyas");
 		    	obj.setGender("Female");
@@ -568,10 +605,22 @@ public class BaseClassApi
 		    	obj.setInvoicegenerated(invoicegenerated);
 		    	obj.setConcern("severe");
 		    	obj.setWearabledata(wearabledata);
-		    	obj.setPatientuploadata(patientuploaddata);
+		    	obj.setAllergies("Rashes");
+		    	obj.setCurrentmedications("abc");
+		    	obj.setDiseases("abc");
+		    	obj.setSurgeries("xyz");
+		    	obj.setPersonaldetail(personaldetail);
+		    	obj.setPatientillnesssummary(patientillnesssumary);
+		    	obj.setExamination(examination);
+		    	obj.setOthers(other);
+		    	obj.setPatientid("5332");
+		    	obj.setVisits(visits);
+		    	obj.setPhone("12738979263");
+		    	obj.setConsultationfees("792");
+		    	obj.setPatientuploaddata(patientuploaddata);
 		    	
-		    	EMR obj1=null;
-		    	obj1=new EMR();
+		    	Consultation obj1=null;
+		    	obj1=new Consultation();
 		    	obj1.setPatientname("Hetasvi Bhatt");
 		    	obj1.setConsultedto("Dr viral vyas");
 		    	obj1.setGender("Female");
@@ -586,7 +635,20 @@ public class BaseClassApi
 		    	obj1.setInvoicegenerated(invoicegenerated);
 		    	obj1.setConcern("severe");
 		    	obj1.setWearabledata(wearabledata);
-		    	obj1.setPatientuploadata(patientuploaddata);
+		    	obj1.setAllergies("Rashes");
+		    	obj1.setCurrentmedications("abc");
+		    	obj1.setDiseases("abc");
+		    	obj1.setSurgeries("xyz");
+		    	obj1.setPersonaldetail(personaldetail);
+		    	obj1.setPatientillnesssummary(patientillnesssumary);
+		    	obj1.setExamination(examination);
+		    	obj1.setOthers(other);
+		    	obj1.setPatientid("5332");
+		    	obj1.setVisits(visits);
+		    	obj1.setPhone("12738979263");
+		    	obj1.setConsultationfees("792");
+		    	
+		    	
 		    	emr.add(obj);
 		    	emr.add(obj1);
 		    	
@@ -599,75 +661,9 @@ public class BaseClassApi
 					
 			 }
 	     	 
-	     	 @GET
-			 @Path("Visit")
-			 @Produces(MediaType.APPLICATION_JSON)
-			 public CheckVisit GetVisitResponse() 
-		     {
-		    	CheckVisit visits=new CheckVisit();
-		    	List<Visit> visit=new ArrayList<Visit>();
-		    	
-		    	Visit obj=null;
-		    	obj=new Visit();
-		    	obj.setPatientname("Hetasvi Bhatt");
-		    	obj.setGender("Female");
-		    	obj.setAge("23 years");
-		    	obj.setCaseid("12345");
-		    	obj.setDate("aug 07 2021");
-		    	obj.setTime("13:00 pm");
-		    	obj.setModeofconsultation("online consultation");
-		    	obj.setVisits("visit 03");
-		    	obj.setChiefcomplaint("abcs");
-		    	obj.setHistoryofpastillness("xyz");
-		    	obj.setHistoryofpresentillness("xyz");
-		    	obj.setGeneralphysicalexamination("xyz");
-		    	obj.setSystematicexamination("xyz");
-		    	obj.setLocalexamination("xyz");
-		    	obj.setProvisionaldiagnosis("xyz");
-		    	obj.setInvestigation("xyz");
-		    	obj.setFinaldiagnosis("xyz");
-		    	obj.setLabreports("xyz");
-		    	obj.setMedications("xyz");
-		    	obj.setInvoices("xyz");
-		    	
-		    	Visit obj1=null;
-		    	obj1=new Visit();
-		    	obj1.setPatientname("Hetasvi Bhatt");
-		    	obj1.setGender("Female");
-		    	obj1.setAge("23 years");
-		    	obj1.setCaseid("12345");
-		    	obj1.setDate("aug 07 2021");
-		    	obj1.setTime("13:00 pm");
-		    	obj1.setModeofconsultation("online consultation");
-		    	obj1.setVisits("visit 03");
-		    	obj1.setChiefcomplaint("abcs");
-		    	obj1.setHistoryofpastillness("xyz");
-		    	obj1.setHistoryofpresentillness("xyz");
-		    	obj1.setGeneralphysicalexamination("xyz");
-		    	obj1.setSystematicexamination("xyz");
-		    	obj1.setLocalexamination("xyz");
-		    	obj1.setProvisionaldiagnosis("xyz");
-		    	obj1.setInvestigation("xyz");
-		    	obj1.setFinaldiagnosis("xyz");
-		    	obj1.setLabreports("xyz");
-		    	obj1.setMedications("xyz");
-		    	obj1.setInvoices("xyz");
-		    	
-		    	
-		    	visit.add(obj);
-		    	visit.add(obj1);
-		    	
-		    	visits.setMessage("Success");
-		    	visits.setStatus("200");
-		    	visits.setData(visit);
-		    	
-		    	
-				return visits;
-					
-			 }
-
+	     	
 	     	@POST
-			@Path("Symptoms")
+			@Path("Symptom")
 		    @Consumes(MediaType.APPLICATION_JSON)
 		 	@Produces(MediaType.APPLICATION_JSON)
 		 	public Response AddSymptoms(Symptom symptoms)
@@ -675,8 +671,17 @@ public class BaseClassApi
 		    	return Response.status(200).entity(dataService.addsymptom(symptoms)).build();
 		 	}
 	     	
+	     	@POST
+			@Path("Consultation")
+		    @Consumes(MediaType.APPLICATION_JSON)
+		 	@Produces(MediaType.APPLICATION_JSON)
+		 	public Response AddConsultation(Consultation consultations)
+		 	{
+		    	return Response.status(200).entity(dataService.addconsultation(consultations)).build();
+		 	}
+	     	
 	     	@GET
-			@Path("Symptoms")
+			@Path("Symptom")
 		    @Consumes(MediaType.APPLICATION_JSON)
 		 	@Produces(MediaType.APPLICATION_JSON)
 		 	public Response GetSymptoms()
@@ -738,36 +743,5 @@ public class BaseClassApi
 				
 	     	    }
 	     	
-	     	@GET
-	     	@Path("ConsultationAddressBook")
-	     	@Produces(MediaType.APPLICATION_JSON)
-	     	public CheckConsultationAddressBook getConsultationaddressbookresponse()
-	     	{
-	     		CheckConsultationAddressBook addressbookdetails=new CheckConsultationAddressBook();
-	     		try {
-	     			List<ConsultationAddressBook> addressbook=new ArrayList<ConsultationAddressBook>(); 
-	     		    ConsultationAddressBook consultationaddressdetails=null;
-	     		    consultationaddressdetails=new ConsultationAddressBook();
-	     		    consultationaddressdetails.setPatientid("1");
-	     		    consultationaddressdetails.setPatientname("raj");
-	     		    consultationaddressdetails.setSex("male");
-	     		    consultationaddressdetails.setAge("32");
-	     		    consultationaddressdetails.setLastvisit("12oct 2021 11:11 am");
-	     		    consultationaddressdetails.setContactnumber("+917738567654");
-	     		    consultationaddressdetails.setConsultationfees("rs 500");
-	     		    addressbook.add(consultationaddressdetails);
-	     		    addressbookdetails.setData(addressbook);
-	     		    addressbookdetails.setMessage("Success");
-	     		    addressbookdetails.setStatus("200");
-	     			return addressbookdetails;
-	     		}
-	     		catch(Exception e)
-	     		{
-	     		addressbookdetails.setMessage(e.getMessage());
-	     		addressbookdetails.setData(null);
-	     		addressbookdetails.setStatus("400");
-	     		}
-				return addressbookdetails;
-	     
-	     	    }
+	     	
 }

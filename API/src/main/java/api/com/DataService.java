@@ -15,6 +15,7 @@ public class DataService
 	 private List<Symptom> symptom=new ArrayList<Symptom>();
 	 private List<SubSymptom> subsymptom=new ArrayList<SubSymptom>();
 	 private List<Patient> patient=new ArrayList<Patient>();
+	 private List<Consultation> consultation=new ArrayList<Consultation>();
 	 
 	 private static DataService ourInstance = new DataService();
 	 public static DataService getInstance() 
@@ -592,6 +593,17 @@ public class DataService
 			 return insert; 
 		 }
 		 
-		
+		 public CheckConsultation addconsultation(Consultation consultations)
+		  {
+			 
+			 int newID=consultation.size()+1;
+			 consultations.setConsultationid(newID);
+		 	 CheckConsultation insert=new CheckConsultation();
+		 	 consultation.add(consultations);
+		 	 insert.setData(consultation);
+		 	 insert.setMessage("success");
+		 	 insert.setStatus("200");
+			 return insert;
+		  }
      
 }
