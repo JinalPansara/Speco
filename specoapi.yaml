@@ -1,13 +1,13 @@
 openapi: 3.0.0
 info:
-  title: Speco Api
-  description: learning and implementing
+  title: SpecoApi
+  description: Api Implementation
   version: 1.0.0
   contact:
-    email: jinalpansara@gmail.com
-    name: Jinal Pansara
+    email: Speco@gmail.com
+    name:  Speco
 paths:
-  /onboarding:
+  /Onboarding:
     get:
       description: Onboarding elements
       responses:
@@ -30,8 +30,34 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
-  /paymentplans:
+  /PaymentPlans:
     get:
       description: PaymentPlans elements
       responses:
@@ -54,8 +80,35 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
-  /doctor:
+        
+  /Doctor:
     post:
       description: Doctor elements
       responses:
@@ -101,8 +154,36 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,POST'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
-  /doctor/{doctorid}:
+        
+  /Doctor/{doctorid}:
     get:
       description: Doctor elements
       parameters:
@@ -131,8 +212,99 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    put:
+      description: Doctor elements
+      parameters:
+        - name: doctorid
+          required: true
+          in: path
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/doctor'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errormodel'
+      x-amazon-apigateway-integration:
+        uri:
+          arn:aws:apigateway:ap-south-1:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-south-1:408647264438:function:Speco_Api/invocations
+        passthroughBehavior: when_no_match
+        httpMethod: POST
+        credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
+        type: aws_proxy
         
-  /clinic:
+    delete:
+      description: Doctor elements
+      parameters:
+        - name: doctorid
+          required: true
+          in: path
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/doctor'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errormodel'
+      x-amazon-apigateway-integration:
+        uri:
+          arn:aws:apigateway:ap-south-1:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-south-1:408647264438:function:Speco_Api/invocations
+        passthroughBehavior: when_no_match
+        httpMethod: POST
+        credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
+        type: aws_proxy
+        
+    options:
+     description: Doctor elements
+     parameters:
+        - name: doctorid
+          required: true
+          in: path
+          schema:
+            type: integer
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,DELETE'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
+        
+  /Clinic:
     post:
       description: Clinic elements
       responses:
@@ -178,7 +350,35 @@ paths:
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
         
-  /clinic/{clinicid}:
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
+        
+        
+  /Clinic/{clinicid}:
     get:
       description: Clinic elements
       parameters:
@@ -264,6 +464,41 @@ paths:
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
         
+    options:
+     description: Clinic elements
+     parameters:
+        - name: clinicid
+          required: true
+          in: path
+          schema:
+            type: integer
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,DELETE PUT'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
+        
+        
   /FAQs:
     get:
       description: Faqs elements
@@ -287,8 +522,35 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
-  /enquiry:
+        
+  /Enquiry:
     post:
       description: enquiry elements
       responses:
@@ -311,8 +573,36 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+      
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
-  /appointment:
+        
+  /Appointment:
     post:
       description: appointment elements
       responses:
@@ -357,8 +647,35 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,POST'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
-  /closedappointment:
+        
+  /ClosedAppointment:
     get:
       description: appointment elements
       responses:
@@ -381,10 +698,37 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
-  /closedappointment/{patientid}:
+        
+  /ClosedAppointment/{patientid}:
     put:
-      description: Clinic elements
+      description: Appointment elements
       parameters:
         - name: patientid
           required: true
@@ -411,8 +755,42 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    
+    options:
+     parameters:
+        - name: patientid
+          required: true
+          in: path
+          schema:
+            type: integer
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,PUT'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
-  /cancelledappointment:
+        
+  /CancelledAppointment:
     get:
       description: appointment elements
       responses:
@@ -435,8 +813,35 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
+          
         
-  /cancelledappointment/{patientid}:
+  /CancelledAppointment/{patientid}:
     put:
       description: cancelled appointment elements
       parameters:
@@ -465,8 +870,41 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    options:
+     parameters:
+        - name: patientid
+          required: true
+          in: path
+          schema:
+            type: integer
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,PUT'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
-  /patient:
+        
+  /Patient:
     get:
       description: patient elements
       responses:
@@ -489,8 +927,60 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+        
+        
+    post:
+      description: patient elements
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/patient'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errormodel'
+      x-amazon-apigateway-integration:
+        uri: 
+          arn:aws:apigateway:ap-south-1:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-south-1:408647264438:function:Speco_Api/invocations
+        passthroughBehavior: when_no_match
+        httpMethod: POST
+        credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
+        type: aws_proxy
+      
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,POST'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
+        
   
-  /payment:
+  /Payment:
     get:
       description: payment elements
       responses:
@@ -513,10 +1003,60 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
-  /EMR:
+        
+  /Consultation:
     get:
-      description: payment elements
+      description: consultation elements
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/emr'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errormodel'
+      x-amazon-apigateway-integration:
+        uri: 
+          arn:aws:apigateway:ap-south-1:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-south-1:408647264438:function:Speco_Api/invocations
+        passthroughBehavior: when_no_match
+        httpMethod: POST
+        credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
+        type: aws_proxy
+    
+    post:
+      description: consulation elements
       responses:
         '200':
           description: 200 response
@@ -538,16 +1078,46 @@ paths:
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
         
-  /visit:
-    get:
-      description: payment elements
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,POST'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
+        
+        
+  
+        
+  /Symptom:
+   post:
+      description: appointment elements
       responses:
         '200':
           description: 200 response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/visit'
+                $ref: '#/components/schemas/symptom'
         '404':
           description: 404 response
           content:
@@ -561,6 +1131,182 @@ paths:
         httpMethod: POST
         credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
         type: aws_proxy
+   get:
+      description: appointment elements
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/symptom'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errormodel'
+      x-amazon-apigateway-integration:
+        uri: 
+          arn:aws:apigateway:ap-south-1:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-south-1:408647264438:function:Speco_Api/invocations
+        passthroughBehavior: when_no_match
+        httpMethod: POST
+        credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
+        type: aws_proxy
+        
+   options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST,GET'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
+        
+        
+  /SubSymptoms:
+   post:
+      description: appointment elements
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/subsymptom'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errormodel'
+      x-amazon-apigateway-integration:
+        uri: 
+          arn:aws:apigateway:ap-south-1:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-south-1:408647264438:function:Speco_Api/invocations
+        passthroughBehavior: when_no_match
+        httpMethod: POST
+        credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
+        type: aws_proxy
+        
+   get:
+      description: appointment elements
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/subsymptom'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errormodel'
+      x-amazon-apigateway-integration:
+        uri: 
+          arn:aws:apigateway:ap-south-1:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-south-1:408647264438:function:Speco_Api/invocations
+        passthroughBehavior: when_no_match
+        httpMethod: POST
+        credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
+        type: aws_proxy
+        
+   options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
+        
+        
+  /Dashboard:
+    get:
+      description: payment elements
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dashboard'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errormodel'
+      x-amazon-apigateway-integration:
+        uri: 
+          arn:aws:apigateway:ap-south-1:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-south-1:408647264438:function:Speco_Api/invocations
+        passthroughBehavior: when_no_match
+        httpMethod: POST
+        credentials: "arn:aws:iam::408647264438:role/lambdaccessrole"
+        type: aws_proxy
+        
+    options:
+     responses:
+      '200':
+        description: Default response
+        headers:
+          Access-Control-Allow-Headers:
+            schema:
+             type: string
+          Access-Control-Allow-Methods:
+           schema:
+              type: string
+          Access-Control-Allow-Origin:
+           schema:
+            type: string
+     x-amazon-apigateway-integration:
+      type: mock
+      requestTemplates:
+       application/json: |
+        {"statusCode" : 200}
+      responses:
+       default:
+        statusCode: 200
+        responseParameters:
+          method.response.header.Access-Control-Allow-Headers: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+          method.response.header.Access-Control-Allow-Origin: "'*'"
         
 components:
   schemas:
@@ -597,11 +1343,17 @@ components:
               Title:
                 type: string
               Description:
-                type: string
+                type: array
+                items:
+                  type: object
+                  properties:
+                    FeatureNo: 
+                      type: string
+                    FeatureDescription:
+                      type: string
               Image:
                 type: string
-              Button:
-                type: string
+                    
     doctor:
       type: object
       properties:
@@ -654,18 +1406,17 @@ components:
                 type: string
               PermZip:
                 type: string
-              Degree:
+              EducationDetails:
                 type: array
                 items:
                   properties:
                     Degree:
                       type: string
-              Institute:
-                type: array
-                items:
-                  properties:
                     Institute:
                       type: string
+                    PassingYear:
+                      type: string
+             
               RegistrationNo:
                 type: string
               IdentityType:
@@ -720,36 +1471,43 @@ components:
           items:
             type: object
             properties:
+              DoctorId:
+                type: string
               ClinicName:
                 type: string
               RegistrationNo:
                 type: string
-              Location:
-                type: string
-              AadharCard:
-                type: string
               EmailId:
-                type: string
-              QualificationName:
                 type: string
               PhoneNumber:
                 type: string
-              InstituteName:
-                type: string
               ClinicType:
-                type: string
-              ProcurementYear:
                 type: string
               YearOfPractice:
                 type: string
               AssociatedFacilities:
                 type: string
-              ClinicRegistration:
+              CurrentAddress:
                 type: string
-              DoctorName:
+              CurrentCityId:
                 type: string
-              Id:
+              CurrentStateId:
                 type: string
+              CurrentCountryId:
+                type: string
+              PermAddress:
+                type: string
+              PermCityId:
+                type: string
+              PermStateId:
+                type: string
+              PermCountryId:
+                type: string
+              CurrentZip:
+                type: string
+                
+              
+              
     FAQs:
       type: object
       properties:
@@ -798,16 +1556,50 @@ components:
           items:
             type: object
             properties:
+              ClinicId:
+                type: string
+              DoctorId:
+                type: string
               PatientId:
                 type: string
-              PatientName:
+              Date:
                 type: string
-              Condition:
+              TimeSlot:
                 type: string
-              Description:
+              AppointmentStatus:
                 type: string
-              Action:
+              ConsultationStatus:
                 type: string
+              ConsultationNumber:
+                type: string
+              Symptoms:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    SymptomId:
+                      type: string
+              Subsymptoms:
+                type: array
+                items:
+                   type: object
+                   properties:
+                      SubSymptomName:
+                        type: string
+              Intensity:
+                type: string
+              Reports:
+                type: array
+                items:
+                  type: object
+                  properties:
+                     ReportsImgUrl:
+                        type: string
+              ConsultationMode:
+                type: string
+              DaysOfSymptoms:
+                type: string
+                
     closedappointment:
       type: object
       properties:
@@ -867,40 +1659,26 @@ components:
             properties:
               PatientId:
                 type: string
-              PatientName:
+              Name: 
                 type: string
-              Sex:
-                type: string
-              LastVisit:
-                type: string
-              Contact:
-                type: string
-              ConsultationFees:
-                type: string
-              ConsultedTo:
-                type: string
-              EMR:
-                type: string
-              PatientUploadedData:
-                type: string
-              Allergies:
-                type: string
-              CurrentMedications:
-                type: string
-              Diseases:
-                type: string
-              Surgeries:
-                type: string
-              WearableData:
-                type: string
-              PersonalHistory:
-                type: string
-              FamilyHistory:
-                type: string
-              SocioEconomicStatus:
-                type: string
-              Concern:
-                type: string
+              EmailId:
+                 type: string
+              Gender:
+                 type: string
+              Address:
+                 type: string
+              Phone:
+                 type: string
+              BloodGroup:
+                 type: string
+              StateId:
+                 type: string
+              CityId:
+                 type: string
+              CountryId:
+                 type: string
+              ZipCode:
+                 type: string
               
     payment:
       type: object
@@ -974,7 +1752,9 @@ components:
               InvoiceGenerated:
                 type: string
     
-    visit:
+            
+    
+    symptom:
       type: object
       properties:
         message:
@@ -986,49 +1766,63 @@ components:
           items:
             type: object
             properties:
-              PatientName:
-                type: string
-              Gender:
-                type: string
-              Age:
-                type: string
-              CaseId:
-                type: string
-              Date:
-                type: string
-              Time:
-                type: string
-              ModeOfConsultation:
-                type: string
-              Visits:
-                type: string
-              ChiefComplaint:
-                type: string
-              HistoryOfPresentIllness:
-                type: string
-              HistoryOfPastIllness:
-                type: string
-              GeneralPhysicalExamination:
-                type: string
-              SystematicExamination:
-                type: string
-              LocalExamination:
-                type: string
-              ProvisionalDiagnosis:
-                type: string
-              Investigation:
-                type: string
-              FinalDiagnosis:
-                type: string
-              LabReports:
-                type: string
-              Medications:
-                type: string
-              Invoices:
-                type: string
-                        
-              
+             Symptom:
+               type: string
+             SymptomId:
+               type: string
             
+            
+    subsymptom:
+      type: object
+      properties:
+        message:
+          type: string
+        status: 
+          type: string
+        data: 
+          type: array
+          items:
+            type: object
+            properties:
+              SymptomId: 
+                type: string
+        SubSymptomName:
+          type: string
+          
+    dashboard:
+        type: object
+        properties:
+          message:
+            type: string
+          status:
+            type: string
+          data:
+            type: array
+            items:
+              type: object
+              properties:
+                PatientId:
+                  type: string
+                Condition: 
+                  type: string
+                Severity:
+                  type: string
+                PatientName:
+                  type: string
+                Doctor: 
+                  type: string
+                ConsultationMode:
+                  type: string
+                Date:
+                  type: string
+                Charges:
+                  type: string
+                Status:
+                  type: string
+        
+    
+        
+               
     errormodel:
       type: object
       required:
