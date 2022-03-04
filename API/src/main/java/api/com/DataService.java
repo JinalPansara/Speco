@@ -1,6 +1,7 @@
 package api.com;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 public class DataService 
@@ -34,7 +35,7 @@ public class DataService
 
 	  public CheckDoctors getdoctors() 
 	  {
-		   
+		  
 		    
 		    List<EducationDetail> educationdetail=new ArrayList<EducationDetail>();
 		    EducationDetail ed=new EducationDetail();

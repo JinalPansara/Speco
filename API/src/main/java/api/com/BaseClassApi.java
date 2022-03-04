@@ -25,7 +25,7 @@ public class BaseClassApi
 	
 	
 	@POST
-	@Path("doctor")
+	@Path("Doctor")
     @Consumes(MediaType.APPLICATION_JSON)
  	@Produces(MediaType.APPLICATION_JSON)
  	public Response getdoctors(Doctors doctor)
@@ -34,14 +34,14 @@ public class BaseClassApi
  	}
 	
 	 @GET 
-	 @Path("doctor")
+	 @Path("Doctor")
      @Produces(MediaType.APPLICATION_JSON)
      public CheckDoctors getdoctors() {
          return dataService.getdoctors();
      }
      
 	 @GET
-	 @Path("doctor/{doctorid}")
+	 @Path("Doctor/{DoctorId}")
 	 @Produces(MediaType.APPLICATION_JSON)
 	 public Response getdoctor(@PathParam("doctorid") int id) {
 	        CheckDoctors doctor = dataService.getdoctorbyid(id);
@@ -57,7 +57,7 @@ public class BaseClassApi
 	    }
 	 
 	 @PUT
-     @Path("doctor/{doctorid}")
+     @Path("Doctor/{Doctorid}")
      @Produces(MediaType.APPLICATION_JSON)
      @Consumes(MediaType.APPLICATION_JSON)
      public Response UpdateDoctorById(@PathParam("doctorid")int id,Doctors doc) {
@@ -71,7 +71,7 @@ public class BaseClassApi
      }
 	 
 	 @DELETE
-     @Path("doctor/{doctorid}")
+     @Path("Doctor/{Doctorid}")
      @Produces(MediaType.APPLICATION_JSON)
      @Consumes(MediaType.APPLICATION_JSON)
      public Response getdetail(@PathParam("doctorid") int id) {
@@ -89,7 +89,7 @@ public class BaseClassApi
      
 	
 	 @GET
-	 @Path("onboarding")
+	 @Path("Onboarding")
 	 @Produces(MediaType.APPLICATION_JSON)
 	 public CheckOnboarding getonboardingesponse() {
 		 
@@ -145,7 +145,7 @@ public class BaseClassApi
 		}
 	 
 	    @POST
-		@Path("clinic")
+		@Path("Clinic")
 	    @Consumes(MediaType.APPLICATION_JSON)
 	 	@Produces(MediaType.APPLICATION_JSON)
 	 	public Response getclinic(Clinic clinic)
@@ -154,14 +154,14 @@ public class BaseClassApi
 	 	}
 	    
 	     @GET
-		 @Path("clinic")
+		 @Path("Clinic")
 	     @Produces(MediaType.APPLICATION_JSON)
 	     public CheckClinic getclinics() {
 	         return dataService.getcliniclist();
 	     }
 	     
 	     @GET
-		 @Path("clinic/{clinicid}")
+		 @Path("Clinic/{Clinicid}")
 		 @Produces(MediaType.APPLICATION_JSON)
 		 public Response getclinicbyid(@PathParam("clinicid") int id) {
 		        CheckClinic clinic = dataService.getClinicById(id);
@@ -176,7 +176,7 @@ public class BaseClassApi
 		    }
 	     
 	     @PUT
-	     @Path("clinic/{clinicid}")
+	     @Path("Clinic/{Clinicid}")
 	     @Produces(MediaType.APPLICATION_JSON)
 	     @Consumes(MediaType.APPLICATION_JSON)
 	     public Response getCustomer(@PathParam("clinicid") int id,Clinic cs) {
@@ -192,7 +192,7 @@ public class BaseClassApi
 	     }
 	     
 	     @DELETE
-	     @Path("clinic/{clinicid}")
+	     @Path("Clinic/{Clinicid}")
 	     @Produces(MediaType.APPLICATION_JSON)
 	     @Consumes(MediaType.APPLICATION_JSON)
 	     public Response getdetails(@PathParam("clinicid")int id) {
@@ -209,7 +209,7 @@ public class BaseClassApi
 	     }
 	     
 	     @GET
-		 @Path("paymentplans")
+		 @Path("PaymentPlans")
 		 @Produces(MediaType.APPLICATION_JSON)
 		 public CheckPaymentplans getpaymentplansesponse() 
 	     {
@@ -325,7 +325,7 @@ public class BaseClassApi
 		 }
 	     
 	     	@POST
-			@Path("enquiry")
+			@Path("Enquiry")
 		    @Consumes(MediaType.APPLICATION_JSON)
 		 	@Produces(MediaType.APPLICATION_JSON)
 		 	public Response GetEnquiryResponse(Enquiry enquiry)
@@ -334,7 +334,7 @@ public class BaseClassApi
 		 	}
 		    
 	     	@POST
-			@Path("appointment")
+			@Path("Appointment")
 		    @Consumes(MediaType.APPLICATION_JSON)
 		 	@Produces(MediaType.APPLICATION_JSON)
 		 	public Response AddAppointment(Appointment appointment)
@@ -343,7 +343,7 @@ public class BaseClassApi
 		 	}
 	     	
 	     	 @GET
-			 @Path("appointment")
+			 @Path("Appointment")
 		     @Produces(MediaType.APPLICATION_JSON)
 		     public CheckAppointment getappointments() {
 		         return dataService.GetAppointment();
@@ -351,7 +351,7 @@ public class BaseClassApi
 	     	
 	     	 
 	     	 @GET
-			 @Path("closedappointment")
+			 @Path("ClosedAppointment")
 			 @Produces(MediaType.APPLICATION_JSON)
 			 public CheckClosedAppointment GetClosedAppointment() 
 		     {
@@ -361,7 +361,7 @@ public class BaseClassApi
 	     	 
 	     	 
 	     	 @PUT
-		     @Path("closedappointment/{patientid}")
+		     @Path("ClosedAppointment/PatientId}")
 		     @Produces(MediaType.APPLICATION_JSON)
 		     @Consumes(MediaType.APPLICATION_JSON)
 		     public Response UpdateClosedAppointment(@PathParam("patientid") int id,ClosedAppointment ca) {
@@ -377,7 +377,7 @@ public class BaseClassApi
 		     }
 	     	 
 	     	 @GET
-			 @Path("cancelledappointment")
+			 @Path("CancelledAppointment")
 			 @Produces(MediaType.APPLICATION_JSON)
 			 public CheckCancelledAppointment GetCancelledAppointment() 
 		     {
@@ -385,7 +385,7 @@ public class BaseClassApi
 			 }
 	     	 
 	     	 @PUT
-		     @Path("cancelledappointment/{patientid}")
+		     @Path("CancelledAppointment/{PatientId}")
 		     @Produces(MediaType.APPLICATION_JSON)
 		     @Consumes(MediaType.APPLICATION_JSON)
 		     public Response UpdateCancelledAppointment(@PathParam("patientid") String id,CancelledAppointment ca) {
@@ -401,7 +401,7 @@ public class BaseClassApi
 		     }
 	     	 
 	     	 @POST
-			 @Path("patient")
+			 @Path("Patient")
 			 @Produces(MediaType.APPLICATION_JSON)
 			 public Response AddPatient(Patient patients) 
 		     {
@@ -409,7 +409,7 @@ public class BaseClassApi
 			 }
 	     	 
 	     	 @GET
-			 @Path("patient")
+			 @Path("Patient")
 			 @Produces(MediaType.APPLICATION_JSON)
 			 public Response GetPatient() 
 		     {
@@ -418,7 +418,7 @@ public class BaseClassApi
 	     	 
 	     	 
 	     	 @GET
-			 @Path("payment")
+			 @Path("Payment")
 			 @Produces(MediaType.APPLICATION_JSON)
 			 public CheckPayment GetPaymentResponse() 
 		     {
@@ -600,7 +600,7 @@ public class BaseClassApi
 			 }
 	     	 
 	     	 @GET
-			 @Path("visit")
+			 @Path("Visit")
 			 @Produces(MediaType.APPLICATION_JSON)
 			 public CheckVisit GetVisitResponse() 
 		     {
@@ -667,7 +667,7 @@ public class BaseClassApi
 			 }
 
 	     	@POST
-			@Path("symptoms")
+			@Path("Symptoms")
 		    @Consumes(MediaType.APPLICATION_JSON)
 		 	@Produces(MediaType.APPLICATION_JSON)
 		 	public Response AddSymptoms(Symptom symptoms)
@@ -676,7 +676,7 @@ public class BaseClassApi
 		 	}
 	     	
 	     	@GET
-			@Path("symptoms")
+			@Path("Symptoms")
 		    @Consumes(MediaType.APPLICATION_JSON)
 		 	@Produces(MediaType.APPLICATION_JSON)
 		 	public Response GetSymptoms()
@@ -685,7 +685,7 @@ public class BaseClassApi
 		 	}
 	     	
 	     	@POST
-			@Path("subsymptoms")
+			@Path("SubSymptoms")
 		    @Consumes(MediaType.APPLICATION_JSON)
 		 	@Produces(MediaType.APPLICATION_JSON)
 		 	public Response AddSubSymptoms(SubSymptom subsymptom)
@@ -694,7 +694,7 @@ public class BaseClassApi
 		 	}
 	     	
 	     	@GET
-			@Path("subsymptoms")
+			@Path("SubSymptoms")
 		    @Consumes(MediaType.APPLICATION_JSON)
 		 	@Produces(MediaType.APPLICATION_JSON)
 		 	public Response GetSubSymptoms()
@@ -703,7 +703,7 @@ public class BaseClassApi
 		 	}
 	     	
 	     	@GET
-	     	@Path("dashboard")
+	     	@Path("Dashboard")
 	     	@Produces(MediaType.APPLICATION_JSON)
 	     	public CheckDashboard getdashboardresponse()
 	     	{
@@ -735,10 +735,11 @@ public class BaseClassApi
 	     		}
 				return dashboarddetails;
 	     
+				
 	     	    }
 	     	
 	     	@GET
-	     	@Path("consultationaddressbook")
+	     	@Path("ConsultationAddressBook")
 	     	@Produces(MediaType.APPLICATION_JSON)
 	     	public CheckConsultationAddressBook getConsultationaddressbookresponse()
 	     	{
