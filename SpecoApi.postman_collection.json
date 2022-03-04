@@ -1,20 +1,212 @@
 {
 	"info": {
-		"_postman_id": "be43289e-84fd-48ef-831d-958765d6ae57",
-		"name": "SpecoApi",
+		"_postman_id": "07003155-8cb7-49a9-841b-cd6028382612",
+		"name": "SpecoTrialApi",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "AddSymptom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\"Symptom\": \"fever\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Symptom",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Symptom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddDoctor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"FirstName\": \"Viral\",\"MiddleName\": \"Rahul\",\"LastName\": \"Vyas\",\"DOB\": \"12/02/1995\", \"Gender\": \"Male\",\"BloodGroup\": \"B+\",\"ProfilePicUrl\": \"abc.jpg\",\"Mobile\": \"0978972891\",\"Email\": \"abc@gmail.com\",\"CurrentAddress\": \"xyz\",\"CurrentCityId\": 0,\"CurrentStateId\": 0,\"CurrentCountryId\": 0,\"PermAddress\": \"xyz\",\"PermCityId\": 0,\"PermStateId\": 0,\"PermCountryId\": 0,\"CurrentZip\": \"400064\",\"PermZip\": \"400064\",\"EducationDetail\": [{\"Degree\": \"MDS Periodotology\", \"PassingYear\": \"1998\", \"Institute\": \"xtz\"} ], \"RegistrationNo\": \"121\",\"IdentityType\": 0, \"IdentityNumber\": \"12\",\"IdentityProof\": \"asjja\",\"Package\": [{\"Name\": \"plan of 2000rs\",\"Id\": 1}],\"CreateBy\": 0,\"CreateDate\": null,\"CreateIpAddress\": \"79.65.1871.12\",\"ClinicId\": [{\"ClinicId\": 0}],\"ConsultationCharge\": 0,\"SpecialityId\":0,\"OverView\":\"xyz\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Doctor",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Doctor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddClinic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"DoctorId\": 1,\"ClinicName\": \"shreenathji\",\"RegistrationNo\": \"1234\", \"EmailId\": \"jinal@gmail.com\",\"PhoneNumber\": \"1234567890\",\"ClinicType\": \"dental\", \"YearOfPractice\": \"12years\",\"AssociatedFacilites\": \"abx\",\"CurrentAddress\": \"xyz\",\"CurrentCityId\": 0,\"CurrentStateId\": 0, \"CurrentCountryId\": 0,\"PermAddress\": \"xyz\",\"PermCityId\": 0,\"PermStateId\": 0,\"PermCountryId\": 0,\"CurrentZip\": \"400064\",\"PermZip\": \"400064\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Clinic",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Clinic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddPatient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Name\": \"abc\",\"EmailId\": \"abc@gmail.com\",\"Gender\": \"xyz\",\"Address\": \"duuj\", \"Phone\": \"27637869170\",\"BloodGroup\": \"ab+\",\"StateId\": 1,\"CityId\": 1,\"CountryId\": 1,\"ZipCode\":\"2300\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Patient",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddAppointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ClinicId\": \"1\",\"DoctorId\": \"1\",\"PatientId\": \"1\",\"ConsultationId\": \"1\",\"Date\": \"12/01/2022\",\"TimeSlot\": \"13:00 pm\",\r\n\"AppointmentStatus\": \"pending\",\"ConsultationStatus\": \"approved\",\"ConsultationNumber\": \"123\",\"Symptoms\": [\r\n{\"SymptomId\": 1,\"SubSymptoms\": [{\"SubSymptomName\": \"fever\"}]}],\"Intensity\": \"low\",\"Reports\": [{\"ReportsImgUrl\": \"abc.jpg\"}],\"ConsultationMode\": \"online\",\"DaysOfSymptoms\": \"1 week\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Appointment",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddSubSymptom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"SymptomId\": 1,\"SubSymptoms\": [{\"SubSymptomName\": \"avc\"}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/SubSymptoms",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"SubSymptoms"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "Onboarding",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://9ar8okajag.execute-api.ap-south-1.amazonaws.com/dev/onboarding",
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Onboarding",
 					"protocol": "https",
 					"host": [
-						"9ar8okajag",
+						"xlk2aral49",
 						"execute-api",
 						"ap-south-1",
 						"amazonaws",
@@ -22,98 +214,7 @@
 					],
 					"path": [
 						"dev",
-						"onboarding"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "AddDoctorList",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"Name\":\"Dr. Viral Vyas\",\"RegistrationNo\":\"94561902\",\"Practice\":\"M.D,Physician\",\"Institute\":\"Medical Institute\",\"Experience\":\"12yrs\",\"Qualification\":\"M.B.B.S\",\"Phone\":\"123456789\",\"Procurement\":\"2018\",\"Overview\":\"Doctor with great experience\",\"Status\":\"today\",\"Image\":\"image2.jpg\",\"OngoingPatient\":\"12+\",\"TreatedPatient\":\"13+\"}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://9ar8okajag.execute-api.ap-south-1.amazonaws.com/dev/doctor",
-					"protocol": "https",
-					"host": [
-						"9ar8okajag",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
-					],
-					"path": [
-						"dev",
-						"doctor"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GetDoctorList",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://9ar8okajag.execute-api.ap-south-1.amazonaws.com/dev/doctor",
-					"protocol": "https",
-					"host": [
-						"9ar8okajag",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
-					],
-					"path": [
-						"dev",
-						"doctor"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GetDoctorListById",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"Id\":\"1\"}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://9ar8okajag.execute-api.ap-south-1.amazonaws.com/dev/doctor/1",
-					"protocol": "https",
-					"host": [
-						"9ar8okajag",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
-					],
-					"path": [
-						"dev",
-						"doctor",
-						"1"
+						"Onboarding"
 					]
 				}
 			},
@@ -125,10 +226,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://9ar8okajag.execute-api.ap-south-1.amazonaws.com/dev/paymentplans",
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/PaymentPlans",
 					"protocol": "https",
 					"host": [
-						"9ar8okajag",
+						"xlk2aral49",
 						"execute-api",
 						"ap-south-1",
 						"amazonaws",
@@ -136,20 +237,113 @@
 					],
 					"path": [
 						"dev",
-						"paymentplans"
+						"PaymentPlans"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "AddClinicDetails",
+			"name": "Faqs",
 			"request": {
-				"method": "POST",
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/FAQs",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"FAQs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Payment",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDoctor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Doctor",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Doctor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDoctorById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Doctor/1",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Doctor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDoctorById",
+			"request": {
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"ClinicName\":\"shreenathji\",\"RegistrationNo\":\"1234\",\"Location\":\"malad\",\"Aadharcard\":\"123456789\",\"EmailId\":\"jinal@gmail.com\",\"QualificationName\":\"MBA\",\"PhoneNumber\":\"1234567890\",\"InstituteName\":\"abc\",\"ClinicType\":\"dental\",\"ProcrurementYear\":\"2020\",\"YearOfPractice\":\"12years\",\"AssociatedFacilites\":\"abx\",\"ClinicRegistration\":\"link\",\"DoctorName\":\"abc\"}",
+					"raw": "{\"FirstName\": \"Virals\",\"MiddleName\": \"Rahul\",\"LastName\": \"Vyas\",\"DOB\": \"12/02/1995\", \"Gender\": \"Male\",\"BloodGroup\": \"B+\",\"ProfilePicUrl\": \"abc.jpg\",\"Mobile\": \"0978972891\",\"Email\": \"abc@gmail.com\",\"CurrentAddress\": \"xyz\",\"CurrentCityId\": 0,\"CurrentStateId\": 0,\"CurrentCountryId\": 0,\"PermAddress\": \"xyz\",\"PermCityId\": 0,\"PermStateId\": 0,\"PermCountryId\": 0,\"CurrentZip\": \"400064\",\"PermZip\": \"400064\",\"EducationDetail\": [{\"Degree\": \"MDS Periodotology\", \"PassingYear\": \"1998\", \"Institute\": \"xtz\"} ], \"RegistrationNo\": \"121\",\"IdentityType\": 0, \"IdentityNumber\": \"12\",\"IdentityProof\": \"asjja\",\"Package\": [{\"Name\": \"plan of 2000rs\",\"Id\": 1}],\"CreateBy\": 0,\"CreateDate\": null,\"CreateIpAddress\": \"79.65.1871.12\",\"ClinicId\": [{\"ClinicId\": 0}],\"ConsultationCharge\": 0,\"SpecialityId\":0}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -157,10 +351,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://9ar8okajag.execute-api.ap-south-1.amazonaws.com/dev/clinic",
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Doctor/1",
 					"protocol": "https",
 					"host": [
-						"9ar8okajag",
+						"xlk2aral49",
 						"execute-api",
 						"ap-south-1",
 						"amazonaws",
@@ -168,22 +362,23 @@
 					],
 					"path": [
 						"dev",
-						"clinic"
+						"Doctor",
+						"1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "GetClinicDetails",
+			"name": "DeleteDoctorById",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://9ar8okajag.execute-api.ap-south-1.amazonaws.com/dev/clinic",
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Doctor/1",
 					"protocol": "https",
 					"host": [
-						"9ar8okajag",
+						"xlk2aral49",
 						"execute-api",
 						"ap-south-1",
 						"amazonaws",
@@ -191,7 +386,267 @@
 					],
 					"path": [
 						"dev",
-						"clinic"
+						"Doctor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPatient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Patient",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddEnquiry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"EmailId\":\"jinal\",\"Name\":\"jinal\",\"EnquiryFor\":\"hello\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Enquiry",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Enquiry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClosedAppointment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/ClosedAppointment",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"ClosedAppointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClosedAppointmentByPatientId",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"PatientId\": \"52562\",\"PatientName\": \"Hetasvi Bhatt\",\"Condition\": \"severe\",\"Description\": \"consulted 2 days ago\", \"Date\": \"12/21/2021\",\"Time\": \"9:30 am to 11:00 am\",\"Action\": \"Follow up\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/ClosedAppointment/52562",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"ClosedAppointment",
+						"52562"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelledAppointment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/CancelledAppointment",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"CancelledAppointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelledAppointmentByPatientId",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"PatientId\": \"52562\", \"PatientName\": \"Hetasvi Bhatt\",\"Reason\": \"xyz\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/CancelledAppointment/52562",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"CancelledAppointment",
+						"52562"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSymptom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Symptom",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Symptom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSubSymptom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/SubSymptoms",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"SubSymptoms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDoctor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://iekgy6z1fi.execute-api.ap-south-1.amazonaws.com/dev/Doctor",
+					"protocol": "https",
+					"host": [
+						"iekgy6z1fi",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Doctor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetClinic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Clinic",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Clinic"
 					]
 				}
 			},
@@ -199,26 +654,14 @@
 		},
 		{
 			"name": "GetClinicById",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"Id\":\"1\"}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "https://9ar8okajag.execute-api.ap-south-1.amazonaws.com/dev/clinic/1",
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Clinic/1",
 					"protocol": "https",
 					"host": [
-						"9ar8okajag",
+						"xlk2aral49",
 						"execute-api",
 						"ap-south-1",
 						"amazonaws",
@@ -226,7 +669,7 @@
 					],
 					"path": [
 						"dev",
-						"clinic",
+						"Clinic",
 						"1"
 					]
 				}
@@ -238,20 +681,11 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"ClinicName\":\"shreenathji\",\"RegistrationNo\":\"1234\",\"Location\":\"malad\",\"Aadharcard\":\"123456789\",\"EmailId\":\"jinal@gmail.com\",\"QualificationName\":\"MBA\",\"PhoneNumber\":\"1234567890\",\"InstituteName\":\"abc\",\"ClinicType\":\"dental\",\"ProcrurementYear\":\"2020\",\"YearOfPractice\":\"12years\",\"AssociatedFacilites\":\"abx\",\"ClinicRegistration\":\"link\",\"DoctorName\":\"abc\"}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "https://9ar8okajag.execute-api.ap-south-1.amazonaws.com/dev/clinic/1",
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Clinic/1",
 					"protocol": "https",
 					"host": [
-						"9ar8okajag",
+						"xlk2aral49",
 						"execute-api",
 						"ap-south-1",
 						"amazonaws",
@@ -259,7 +693,7 @@
 					],
 					"path": [
 						"dev",
-						"clinic",
+						"Clinic",
 						"1"
 					]
 				}
@@ -271,20 +705,11 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"Id\":\"1\"}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "https://9ar8okajag.execute-api.ap-south-1.amazonaws.com/dev/clinic/1",
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Clinic/1",
 					"protocol": "https",
 					"host": [
-						"9ar8okajag",
+						"xlk2aral49",
 						"execute-api",
 						"ap-south-1",
 						"amazonaws",
@@ -292,8 +717,109 @@
 					],
 					"path": [
 						"dev",
-						"clinic",
+						"Clinic",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAppointment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Appointment",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddConsultation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Consultation",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Consultation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetConsultation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"PatientName\": \"Hetasvi Bhatt\",\"ConsultedTo\": \"Dr viral vyas\",\"Gender\": \"Female\",\"Age\": \"23 years\",\"Symptoms\":[{\"Symptom\": \"Cough from 3 days,severe\",\"SymptomId\": 0},{\"Symptom\": \"vomiting since 2 days\",\"SymptomId\": 0},{\"Symptom\": \"cant eat properly\",\"SymptomId\": 0}],\"Findings\":[{\"Findings\": \"urine output normal\"},{ \"Findings\": \"red throat\"}],\"Diagnosis\":[{\"Diagnosis\": \"LRTI lower repository tract infection\"},{\"Diagnosis\": \"viral infection\"}],\"Instruction\": \"careful\",\"FollowUp\": [{\"Date\": \"6th nov 2021\",\"Time\": \"4pm to 6pm\",\"Mode\": \"online consulation\"},{\"Date\": \"6th nov 2021\",\"Time\": \"4pm to 6pm\",\"Mode\": \"online consulation\"}],\"Prescription\": [\r\n{\"MedicineName\": \"Domstal\",\"Times\": \"3 times a day\"},{\"MedicineName\": \"Ecosprin\",\"Times\": \"4tabs X times a day\"}],\"EMRGenerated\": [{\"ConsultedTo\": \"DR. John dsouza\",\"Concern\": \"Headache,fever\",\"AppointmentDate\": \"12 oct 2021\",\"EMR\": \"image1.jpg\"}],\"Concern\": \"severe\", \"InvoiceGenerated\": [{ \"Invoice\": \"image1.jpg\",\"GeneratedBy\": \"Dr John souza\",\"Date\": \"12 oct 2021\"\r\n}],\"WearableData\": [{\"ConsultedTo\": \"Dr Abc\",\"Concern\": \"abc\",\"AppointmentDate\": \"12/02/2021\",\"WearableData\": \"img1.jpg\"}],\"Allergies\": \"Rashes\",\"CurrentMedications\": \"abc\",\r\n\"Diseases\": \"abc\",\"Surgeries\": \"xyz\",\"PersonalDetail\":[{\"personalhistory\": \"abcd\",\"familyhistory\": \"xyzj\",\"socioeconomicstatus\": \"abcd\"}],\"PatientIllnessSummary\": [\r\n{\"ChiefComplaint\": \"dujhqk\",\"HistoryOfPresentIllness\": \"asjs\",\"HistoryOfPastIllness\": \"dccukhw\"}],\"Examination\": [{\"GeneralPhysicalExamination\": \"aduwas\",\"SystematicExamination\": \"guqyasui\",\r\n\"LocalExamination\": \"sdhcukqka\"}],\"Others\": [{\"Medications\": \"asudukj\",\"Invoices\": \"img1.jpg\"}],\"PatientId\": \"5332\",\"Visits\": [{ \"Date\": \"12/02/201\",\r\n\"Time\": \"12:00 pm to 1:00 pm\",\"Visit\": \"01\"}],\"Phone\": \"12738979263\",\"ConsultationFees\": \"792\",\"ConsultationId\": 0,\"PatientUploadData\": [{\"FileUploaded\": \"img1.jpg\",\r\n\"ConsultedTo\": \"Dr xyz\",\"Concern\": \"abc\",\"AppointmentDate\": \"12/02/2021\"}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Consultation",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Consultation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xlk2aral49.execute-api.ap-south-1.amazonaws.com/dev/Dashboard",
+					"protocol": "https",
+					"host": [
+						"xlk2aral49",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"Dashboard"
 					]
 				}
 			},
