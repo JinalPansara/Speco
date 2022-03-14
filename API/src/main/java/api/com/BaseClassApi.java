@@ -148,14 +148,7 @@ public class BaseClassApi
 		@Path("Clinic")
 	    @Consumes(MediaType.APPLICATION_JSON)
 	 	@Produces(MediaType.APPLICATION_JSON)
-	 	public Response getclinic(Clinic clinic)
-	 	{
-	    	return Response.status(200).entity(dataService.clinic(clinic)).build();
-	 	}
-	    
-	     @GET
-		 @Path("Clinic")
-	     @Produces(MediaType.APPLICATION_JSON)
+	 	
 	     public CheckClinic getclinics() {
 	         return dataService.getcliniclist();
 	     }
