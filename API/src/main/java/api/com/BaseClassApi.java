@@ -714,6 +714,14 @@ public class BaseClassApi
 	     	{
 	     		CheckDashboard dashboarddetails=new CheckDashboard();
 	     		try {
+	     			
+	     			List<TodayWeekMonthYear> todayweekmonthyear=new ArrayList<TodayWeekMonthYear>();
+	     			TodayWeekMonthYear today=new TodayWeekMonthYear();
+	     			today.setTotalpatients("20");
+	     			today.setIncome("281763");
+	     			today.setPatientstreated("12");
+	     			today.setCancelledappointment("20");
+	     			todayweekmonthyear.add(today);
 	     			List<Dashboard> dashboard=new ArrayList<Dashboard>(); 
 	     		    Dashboard details=null;
 	     		    details=new Dashboard();
@@ -726,6 +734,10 @@ public class BaseClassApi
 	     		    details.setDate("12/03/2022");
 	     		    details.setCharges("rs2000/-");
 	     		    details.setStatus("pending");
+	     		    details.setToday(todayweekmonthyear);
+	     		    details.setWeek(todayweekmonthyear);
+	     		    details.setMonth(todayweekmonthyear);
+	     		    details.setYear(todayweekmonthyear);
 	     		    dashboard.add(details);
 	     		    dashboarddetails.setData(dashboard);
 	     		    dashboarddetails.setMessage("Success");

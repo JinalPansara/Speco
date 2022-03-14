@@ -30,6 +30,7 @@ api\com\CheckSubSymptoms.class
 api\com\resource\PingResource.class
 api\com\FAQs.class
 api\com\Consultation.class
+api\com\TodayWeekMonthYear.class
 api\com\InvoiceGenerated.class
 api\com\CheckCancelledAppointment.class
 api\com\CheckAppointment.class
