@@ -19,7 +19,7 @@ public class DataService
 	 
 	 private static DataService ourInstance = new DataService();
 	 public static DataService getInstance() 
-	 {
+	 { 
 	        return ourInstance;
 	 }
 	 public CheckDoctors doctor(Doctors doctors) 
@@ -355,7 +355,6 @@ public class DataService
 	    	obj.setDate("12/21/2021");
 	    	obj.setTime("9:30 am to 11:00 am");
 	    	obj.setAction("Follow up");
-	    	
 	    	ClosedAppointment obj1=null;
 	    	obj1=new ClosedAppointment();
 	    	
@@ -367,8 +366,7 @@ public class DataService
 	    	obj1.setTime("9:30 am to 11:00 am");
 	    	obj1.setAction("followup");
 	    	obj1.setAction("consult");
-	    	
-	    	
+	    	  	
 	    	closedappointment.add(obj);
 	    	closedappointment.add(obj1);
 	    	
