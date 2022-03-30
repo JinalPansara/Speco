@@ -19,13 +19,15 @@ import java.io.OutputStream;
 public class StreamLambdaHandler implements RequestStreamHandler {
     private static final ResourceConfig jerseyApplication = new ResourceConfig()
                                                                     .register(BaseClassApi.class)
-                                                                    .register(JacksonFeature.class);
+                                                                    .register(JacksonFeature.class)
+                                                                    .register(CorsFilter.class);
     private static final JerseyLambdaContainerHandler<AwsProxyRequest, AwsProxyResponse> handler
             = JerseyLambdaContainerHandler.getAwsProxyHandler(jerseyApplication);
 
-    @Override
-    public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context)
+    public void handleRequest(InputStream inputStream, OutputStream outputStream,Context context)
             throws IOException {
-        handler.proxyStream(inputStream, outputStream, context);
+    	  handler.proxyStream(inputStream, outputStream, context);
     }
+    
+	
 }

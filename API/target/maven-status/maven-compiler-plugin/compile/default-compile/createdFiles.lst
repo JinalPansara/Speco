@@ -46,6 +46,7 @@ api\com\Package.class
 api\com\ClosedAppointment.class
 api\com\PaymentPlansFeatures.class
 api\com\CheckOnboarding.class
+api\com\CorsFilter.class
 api\com\EducationDetail.class
 api\com\Payment.class
 api\com\CheckDashboard.class
